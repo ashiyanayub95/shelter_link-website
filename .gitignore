@@ -4,6 +4,9 @@
 dist
 tmp
 out-tsc
+
+# raw/uncompressed source video (only the compressed asset is committed)
+/YTDown.com_*.mp4
 *.tsbuildinfo
 .expo
 .expo-shared
