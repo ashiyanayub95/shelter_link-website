@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import heroVideo from '@assets/hero_video.mp4';
 import heroTownshipImg from '@assets/generated_images/hero_township.jpg';
 
 export default function Hero() {
@@ -14,21 +15,19 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-[100dvh] flex flex-col justify-center pt-20 overflow-hidden">
-      {/* Background with overlay */}
+      {/* Background video with overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.img
-          src={heroTownshipImg}
-          alt="Modern housing community"
+        <video
           className="w-full h-full object-cover"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.15 }}
-          transition={{
-            duration: 20,
-            ease: 'easeInOut',
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        />
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster={heroTownshipImg}
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-primary/70 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/30" />
       </div>
