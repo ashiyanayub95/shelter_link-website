@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @workspace/shelterlink run build",
-  "outputDirectory": "artifacts/shelterlink/dist/public",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
 

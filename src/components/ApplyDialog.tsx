@@ -12,14 +12,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '@/lib/web3forms';
 import { Loader2, Upload } from 'lucide-react';
-
-// ─────────────────────────────────────────────────────────────────────────────
-// SETUP REQUIRED: paste your free Web3Forms access key below.
-// Get one in ~1 minute at https://web3forms.com  → enter your email → copy key.
-// Until this is a real key, submissions will NOT be recorded.
-// ─────────────────────────────────────────────────────────────────────────────
-const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
 
 interface ApplyDialogProps {
   jobTitle: string;
@@ -57,7 +51,7 @@ export default function ApplyDialog({
       formData.append('subject', `New Job Application: ${jobTitle}`);
       formData.append('from_name', 'ShelterLink Careers');
 
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
         body: formData,
       });

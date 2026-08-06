@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Loader2 } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '@/lib/web3forms';
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate form submission
-    alert('Thank you for your message. We will get back to you shortly.');
+    const form = e.currentTarget;
+
+    if (WEB3FORMS_ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
+      toast({
+        title: 'Form not connected yet',
+        description:
+          'Add your Web3Forms access key in src/lib/web3forms.ts to start receiving messages.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const formData = new FormData(form);
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      formData.append('subject', 'New Contact Form Message — ShelterLink');
+      formData.append('from_name', 'ShelterLink Website');
+
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        toast({
+          title: 'Message sent ✅',
+          description: 'Thank you for your message. We will get back to you shortly.',
+        });
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      toast({
+        title: 'Something went wrong',
+        description: 'Your message could not be sent. Please try again or email us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -33,28 +79,40 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-secondary mb-1">Full Name</label>
-                  <input type="text" id="name" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white" placeholder="John Doe" />
+                  <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white" placeholder="John Doe" />
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-secondary mb-1">Email</label>
-                    <input type="email" id="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white" placeholder="john@example.com" />
+                    <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white" placeholder="john@example.com" />
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-secondary mb-1">Phone</label>
-                    <input type="tel" id="phone" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white" placeholder="+92 3XX XXXXXXX" />
+                    <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white" placeholder="+92 3XX XXXXXXX" />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-secondary mb-1">Message</label>
-                  <textarea id="message" required rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white resize-none" placeholder="How can we help you?"></textarea>
+                  <textarea id="message" name="message" required rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white resize-none" placeholder="How can we help you?"></textarea>
                 </div>
-                
-                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 mt-4">
-                  <Send className="w-4 h-4" />
-                  Send Message
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 mt-4 disabled:opacity-60"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" /> Sending…
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
