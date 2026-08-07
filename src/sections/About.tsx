@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Home, Leaf, Shield, Wrench } from 'lucide-react';
+import { Link } from 'wouter';
+import { Users, Home, Leaf, Shield, Wrench, ArrowRight } from 'lucide-react';
 import aboutImg from '@assets/generated_images/about_construction.jpg';
 
 const highlights = [
@@ -48,11 +49,18 @@ export default function About() {
               ))}
             </div>
             
-            <div className="border-l-4 border-accent pl-6 py-2">
+            <div className="border-l-4 border-accent pl-6 py-2 mb-8">
               <p className="text-lg font-medium text-secondary italic">
                 "We don't just build houses, we develop entire communities with the infrastructure families need to thrive."
               </p>
             </div>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+            >
+              Learn More About Us <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
 
           <motion.div

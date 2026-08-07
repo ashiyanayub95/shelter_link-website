@@ -1,10 +1,24 @@
 import React from 'react';
+import { Link, useLocation } from 'wouter';
 import shelterLinkLogo from '@assets/Shelterlink_Logo_1783597725426.png';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
+  const [location, navigate] = useLocation();
+
   const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    if (location !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          const top = element.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }, 100);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       const top = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -52,23 +66,36 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  onClick={(e) => scrollTo(e, '#home')}
+                  className="text-white/70 hover:text-accent transition-colors text-sm"
+                >
+                  Home
+                </a>
+              </li>
               {[
-                { label: 'Home', id: '#home' },
-                { label: 'About Us', id: '#about' },
-                { label: 'Projects', id: '#projects' },
-                { label: 'Leadership', id: '#leadership' },
-                { label: 'Contact', id: '#contact' },
-              ].map(({ label, id }) => (
+                { label: 'About Us', href: '/about' },
+                { label: 'Projects', href: '/projects' },
+                { label: 'Team', href: '/team' },
+                { label: 'Career', href: '/career' },
+              ].map(({ label, href }) => (
                 <li key={label}>
-                  <a 
-                    href={id} 
-                    onClick={(e) => scrollTo(e, id)}
-                    className="text-white/70 hover:text-accent transition-colors text-sm"
-                  >
+                  <Link href={href} className="text-white/70 hover:text-accent transition-colors text-sm">
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => scrollTo(e, '#contact')}
+                  className="text-white/70 hover:text-accent transition-colors text-sm"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 

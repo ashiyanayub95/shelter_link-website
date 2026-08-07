@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
+import { ArrowRight } from 'lucide-react';
 import leaderAvatar from '@assets/generated_images/leader_avatar.jpg';
 
 export default function Leadership() {
@@ -64,6 +66,15 @@ export default function Leadership() {
             </div>
           </div>
         </motion.div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/team"
+            className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+          >
+            Meet the Full Team <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );

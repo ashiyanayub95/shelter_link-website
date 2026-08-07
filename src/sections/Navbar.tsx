@@ -7,11 +7,11 @@ import { useState, useEffect } from 'react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'About Us', href: '#about' },
+  { name: 'About Us', href: '/about' },
   { name: 'Services', href: '#services' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Projects', href: '/projects' },
   { name: 'Why Choose Us', href: '#why-choose-us' },
-  { name: 'Leadership', href: '#leadership' },
+  { name: 'Team', href: '/team' },
   { name: 'Career', href: '/career' },
   { name: 'Contact', href: '#contact' },
 ];

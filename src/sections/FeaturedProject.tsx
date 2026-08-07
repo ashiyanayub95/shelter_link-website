@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 import { MapPin, CheckCircle2, Calendar, Map, Activity, Layers } from 'lucide-react';
 import featuredProjectImg from '@assets/generated_images/featured_project.jpg';
 
@@ -88,9 +89,12 @@ export default function FeaturedProject() {
               </div>
             </div>
 
-            <button className="bg-white text-primary hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition-all shadow-lg active:scale-95">
+            <Link
+              href="/projects/arbakan-valley"
+              className="inline-block bg-white text-primary hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition-all shadow-lg active:scale-95"
+            >
               View Project Details
-            </button>
+            </Link>
           </motion.div>
 
           <motion.div
