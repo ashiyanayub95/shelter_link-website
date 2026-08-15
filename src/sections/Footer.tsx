@@ -80,6 +80,7 @@ export default function Footer() {
                 { label: 'Projects', href: '/projects' },
                 { label: 'Team', href: '/team' },
                 { label: 'Career', href: '/career' },
+                { label: 'Contact', href: '/contact' },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <Link href={href} className="text-white/70 hover:text-accent transition-colors text-sm">
@@ -87,15 +88,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#contact"
-                  onClick={(e) => scrollTo(e, '#contact')}
-                  className="text-white/70 hover:text-accent transition-colors text-sm"
-                >
-                  Contact
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -115,7 +107,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-white/70">
               <li>
                 <span className="block text-accent font-medium mb-1">Address:</span>
-                F-20 Khushal Khan Khattak Road,<br/>University Town, Peshawar, Pakistan
+                Ground Floor, House F-20, Khushal Khan Khattak Lane,<br/>Old Bara Road, University Town, Peshawar, Pakistan
               </li>
               <li>
                 <span className="block text-accent font-medium mb-1">Phone:</span>
@@ -133,6 +125,9 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 mt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-sm">
             &copy; 2025 ShelterLink (Private) Limited. All Rights Reserved.
+            <span className="block md:inline md:ml-2 text-white/40">
+              SECP Reg. No. 0300325 &middot; NTN H023788
+            </span>
           </p>
           <div className="flex gap-6 text-sm text-white/50">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

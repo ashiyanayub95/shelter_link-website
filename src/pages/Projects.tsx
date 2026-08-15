@@ -29,7 +29,7 @@ export default function Projects() {
             <p className="text-lg md:text-xl text-white/80 leading-relaxed">
               From ongoing developments to fully delivered townships, explore the
               residential communities ShelterLink has planned, built, and handed
-              over across Peshawar.
+              over across Peshawar and Mardan.
             </p>
           </motion.div>
         </div>

@@ -136,9 +136,9 @@ export default function Contact() {
                   <div>
                     <h5 className="font-bold text-white mb-1">Head Office</h5>
                     <p className="text-white/70 leading-relaxed text-sm">
-                      F-20 Khushal Khan Khattak Road,<br />
-                      University Town, Peshawar,<br />
-                      Pakistan
+                      Ground Floor, House F-20,<br />
+                      Khushal Khan Khattak Lane, Old Bara Road,<br />
+                      University Town, Peshawar, Pakistan
                     </p>
                   </div>
                 </div>

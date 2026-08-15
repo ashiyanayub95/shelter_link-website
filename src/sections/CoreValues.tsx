@@ -1,37 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Map, Droplets, Banknote, ShieldCheck, TreePine, Hammer } from 'lucide-react';
+import { ShieldCheck, Gem, Clock, Lightbulb, TrendingUp, Users } from 'lucide-react';
 
 const values = [
   {
-    icon: Map,
-    title: "Purpose Built Planning",
-    description: "Every project is planned with community needs first, ensuring well-thought-out layouts and accessible amenities."
-  },
-  {
-    icon: Droplets,
-    title: "Basic Infrastructure First",
-    description: "We prioritize essential services—roads, water, and sewerage—before any other phase of development begins."
-  },
-  {
-    icon: Banknote,
-    title: "Affordable Housing",
-    description: "Quality homes and plots offered at competitive prices that middle and low-income families can realistically afford."
-  },
-  {
     icon: ShieldCheck,
-    title: "Transparency",
-    description: "Open communication, legal compliance, and completely honest dealings with all our investors and buyers."
+    title: "Integrity",
+    description: "Honest dealings with clients, partners, and government authorities in every transaction we make."
   },
   {
-    icon: TreePine,
-    title: "Long-Term Community Thinking",
-    description: "We are building lasting neighborhoods with schools, mosques, and parks, not just dividing land into plots."
+    icon: Gem,
+    title: "Quality",
+    description: "Durable construction and well-planned townships built to stand the test of time."
   },
   {
-    icon: Hammer,
-    title: "Quality Construction",
-    description: "Utilizing durable materials and professional workmanship to ensure our infrastructure stands the test of time."
+    icon: Clock,
+    title: "Reliability",
+    description: "Delivering on our commitments, on time, so families and investors can plan with confidence."
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation",
+    description: "Modern, unique approaches to township design that improve on conventional real estate planning."
+  },
+  {
+    icon: TrendingUp,
+    title: "Growth",
+    description: "Expanding responsibly from local to regional and national scale, one community at a time."
+  },
+  {
+    icon: Users,
+    title: "Community",
+    description: "Development that genuinely serves the people who live and work there, not just the balance sheet."
   }
 ];
 

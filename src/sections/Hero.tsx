@@ -1,8 +1,26 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
+import { ArrowRight, ChevronDown, ShieldCheck } from 'lucide-react';
 import heroVideo from '@assets/hero_video.mp4';
 import heroTownshipImg from '@assets/generated_images/hero_township.jpg';
+
+const trustStats = [
+  { value: '20+', label: 'Years Experience' },
+  { value: '150+', label: 'Plots Delivered' },
+  { value: '100%', label: 'Client Commitment' },
+];
+
+const heroContainer: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+};
+
+const heroItem: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
 
 export default function Hero() {
   const scrollTo = (href: string) => {
@@ -33,35 +51,67 @@ export default function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-start justify-center grow pb-20">
-        <div className="max-w-3xl mt-12 md:mt-16">
+        <motion.div
+          className="max-w-3xl mt-12 md:mt-16"
+          variants={heroContainer}
+          initial="hidden"
+          animate="show"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={heroItem}
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-6"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6">
-              Building Affordable Communities for a Better Tomorrow
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl leading-relaxed">
-              ShelterLink develops sustainable housing societies, infrastructure, and community-focused residential projects across Pakistan.
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => scrollTo('#projects')}
-                className="btn-shine bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/30 active:scale-95"
-              >
-                Explore Projects
-              </button>
-              <button
-                onClick={() => scrollTo('#contact')}
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-full font-medium transition-all active:scale-95"
-              >
-                Contact Us
-              </button>
-            </div>
+            <ShieldCheck className="w-4 h-4 text-accent shrink-0" />
+            <span className="text-xs font-bold uppercase tracking-wider text-white">
+              SECP Registered
+            </span>
           </motion.div>
-        </div>
+
+          <motion.h1
+            variants={heroItem}
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6"
+          >
+            Building Affordable Communities for a Better Tomorrow
+          </motion.h1>
+
+          <motion.p
+            variants={heroItem}
+            className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl leading-relaxed"
+          >
+            ShelterLink develops sustainable housing societies, infrastructure, and community-focused residential projects across Pakistan.
+          </motion.p>
+
+          <motion.div variants={heroItem} className="flex flex-wrap items-center gap-4">
+            <button
+              onClick={() => scrollTo('#projects')}
+              className="btn-shine bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/30 active:scale-95 inline-flex items-center gap-2"
+            >
+              Explore Projects
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => scrollTo('#contact')}
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-full font-medium transition-all active:scale-95"
+            >
+              Contact Us
+            </button>
+          </motion.div>
+
+          <motion.div
+            variants={heroItem}
+            className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-10 px-5 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl w-fit"
+          >
+            {trustStats.map((stat, i) => (
+              <React.Fragment key={stat.label}>
+                {i > 0 && <div className="hidden sm:block w-px h-8 bg-white/20" />}
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-xl md:text-2xl font-heading font-bold text-white">{stat.value}</span>
+                  <span className="text-xs text-white/70 uppercase tracking-wide">{stat.label}</span>
+                </div>
+              </React.Fragment>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Animated scroll-down indicator */}

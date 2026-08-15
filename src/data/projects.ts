@@ -29,12 +29,12 @@ export const projects: Project[] = [
     tagline:
       'Our flagship development bringing premium town planning to affordable housing.',
     image: arbakanImg,
-    location: 'Peshawar, Pakistan',
+    location: 'Mardan, Pakistan',
     stats: [
       { label: 'Total Area', value: '15 Acres' },
       { label: 'Residential', value: '50+ Plots' },
       { label: 'Est. Completion', value: 'Q1 2027' },
-      { label: 'Location', value: 'Prime, Easy Access' },
+      { label: 'Location', value: 'Mardan, KP' },
     ],
     description: [
       "Strategically located with direct access to major transit routes, Arbakan Valley offers a complete lifestyle with modern amenities for families seeking affordable, well-planned living.",
@@ -60,6 +60,8 @@ export const projects: Project[] = [
     stats: [
       { label: 'Residential Plots', value: '30' },
       { label: 'Occupancy', value: '100%' },
+      { label: 'Site Size', value: '8 Acres' },
+      { label: 'Completion Time', value: '12 Months' },
     ],
     description: [
       'Sheikh Abad Township was delivered with complete utilities and paved road infrastructure, and has reached full occupancy — a testament to the quality and livability of the community ShelterLink built.',
@@ -75,7 +77,10 @@ export const projects: Project[] = [
     isPlaceholderImage: true,
     gradient: 'from-blue-600 to-indigo-800',
     location: 'Peshawar, Pakistan',
-    stats: [{ label: 'Plots Delivered', value: '45+' }],
+    stats: [
+      { label: 'Plots Delivered', value: '45+' },
+      { label: 'Completion Time', value: '12 Months' },
+    ],
     description: [
       'Safi Abad Scheme was completed with a full sewerage system, access roads, and formal title handover to residents — closing out the project with full legal transparency for every family.',
     ],

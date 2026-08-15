@@ -13,7 +13,7 @@ const navLinks = [
   { name: 'Why Choose Us', href: '#why-choose-us' },
   { name: 'Team', href: '/team' },
   { name: 'Career', href: '/career' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {

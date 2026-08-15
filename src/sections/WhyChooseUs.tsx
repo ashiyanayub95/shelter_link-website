@@ -9,7 +9,7 @@ const reasons = [
   { icon: ShieldCheck, title: "Transparency", desc: "Every transaction and progress update openly communicated." },
   { icon: Heart, title: "Community Development", desc: "Building complete communities, not just plots." },
   { icon: Leaf, title: "Sustainable Planning", desc: "Future-proof development with lasting value." },
-  { icon: Landmark, title: "Government Collaboration", desc: "Active partnerships with public sector bodies." }
+  { icon: Landmark, title: "Public Sector Ready", desc: "C4 construction license positions us to expand into public sector housing partnerships." }
 ];
 
 export default function WhyChooseUs() {

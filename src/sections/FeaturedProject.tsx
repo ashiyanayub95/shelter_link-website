@@ -60,8 +60,8 @@ export default function FeaturedProject() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold">Prime Location</div>
-                  <div className="text-white/70 text-sm">Easy Access</div>
+                  <div className="font-bold">Mardan, KP</div>
+                  <div className="text-white/70 text-sm">Prime Location</div>
                 </div>
               </div>
             </div>

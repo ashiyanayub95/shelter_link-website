@@ -27,7 +27,7 @@ export default function VisionMission() {
             
             <h3 className="text-2xl font-heading font-bold text-white mb-6">Our Vision</h3>
             <p className="text-white/80 text-lg leading-relaxed">
-              "To become Pakistan's most trusted developer of sustainable and affordable housing communities."
+              To become a trusted name in Pakistan's housing sector by creating modern, inclusive, and sustainable communities that truly serve the needs of low and middle income families — where every household, regardless of income, has access to safe, well-planned, and dignified living.
             </p>
           </motion.div>
 
@@ -46,7 +46,7 @@ export default function VisionMission() {
             
             <h3 className="text-2xl font-heading font-bold text-white mb-6">Our Mission</h3>
             <p className="text-white/80 text-lg leading-relaxed">
-              "Deliver quality housing schemes with reliable infrastructure, transparency, and long-term community value."
+              To design and develop housing schemes that deliver real value — not just in cost, but in quality of life — building communities that offer essential services, lasting infrastructure, and environments where families can grow with comfort, security, and pride.
             </p>
           </motion.div>
 

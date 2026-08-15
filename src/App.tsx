@@ -13,6 +13,7 @@ import Team from './pages/Team';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Career from './pages/Career';
+import Contact from './pages/Contact';
 import NotFound from './pages/not-found';
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ function App() {
             <Route path="/projects" component={Projects} />
             <Route path="/projects/:slug" component={ProjectDetail} />
             <Route path="/career" component={Career} />
+            <Route path="/contact" component={Contact} />
             <Route component={NotFound} />
           </Switch>
           <Footer />
