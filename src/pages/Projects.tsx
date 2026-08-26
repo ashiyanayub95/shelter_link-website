@@ -27,62 +27,63 @@ export default function Projects() {
               Communities We're Building
             </h2>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-              From ongoing developments to fully delivered townships, explore the
-              residential communities ShelterLink has planned, built, and handed
-              over across Peshawar and Mardan.
+              Explore the fully delivered residential communities ShelterLink has
+              planned, built, and handed over across Peshawar.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Ongoing */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-primary font-bold tracking-wider uppercase text-sm mb-3">
-              In Progress
-            </h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary">
-              Ongoing Development
-            </h3>
-          </div>
+      {ongoing.length > 0 && (
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <h2 className="text-primary font-bold tracking-wider uppercase text-sm mb-3">
+                In Progress
+              </h2>
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary">
+                Ongoing Development
+              </h3>
+            </div>
 
-          <div className="max-w-5xl mx-auto space-y-8">
-            {ongoing.map((project) => (
-              <Link key={project.slug} href={`/projects/${project.slug}`} asChild>
-                <motion.a
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="group grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
-                >
-                  {project.image && (
-                    <div className="h-64 md:h-full overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+            <div className="max-w-5xl mx-auto space-y-8">
+              {ongoing.map((project) => (
+                <Link key={project.slug} href={`/projects/${project.slug}`} asChild>
+                  <motion.a
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="group grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  >
+                    {project.image && (
+                      <div className="h-64 md:h-full overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-8 md:p-10 bg-primary text-white flex flex-col justify-center">
+                      <div className="inline-flex items-center gap-2 bg-accent text-secondary px-4 py-1.5 rounded-full text-sm font-bold tracking-wide mb-6 w-max">
+                        <Activity className="w-4 h-4" />
+                        Ongoing Project
+                      </div>
+                      <h4 className="text-3xl font-heading font-bold mb-3">{project.name}</h4>
+                      <p className="text-white/85 leading-relaxed mb-6">{project.tagline}</p>
+                      <span className="inline-flex items-center gap-2 font-medium text-accent group-hover:gap-3 transition-all">
+                        View Project Details <ArrowRight className="w-4 h-4" />
+                      </span>
                     </div>
-                  )}
-                  <div className="p-8 md:p-10 bg-primary text-white flex flex-col justify-center">
-                    <div className="inline-flex items-center gap-2 bg-accent text-secondary px-4 py-1.5 rounded-full text-sm font-bold tracking-wide mb-6 w-max">
-                      <Activity className="w-4 h-4" />
-                      Ongoing Project
-                    </div>
-                    <h4 className="text-3xl font-heading font-bold mb-3">{project.name}</h4>
-                    <p className="text-white/85 leading-relaxed mb-6">{project.tagline}</p>
-                    <span className="inline-flex items-center gap-2 font-medium text-accent group-hover:gap-3 transition-all">
-                      View Project Details <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </motion.a>
-              </Link>
-            ))}
+                  </motion.a>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Completed */}
       <section className="py-24 bg-slate-50">

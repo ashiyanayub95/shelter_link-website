@@ -5,7 +5,6 @@ import About from '../sections/About';
 import VisionMission from '../sections/VisionMission';
 import CoreValues from '../sections/CoreValues';
 import Services from '../sections/Services';
-import FeaturedProject from '../sections/FeaturedProject';
 import PreviousProjects from '../sections/PreviousProjects';
 import WhyChooseUs from '../sections/WhyChooseUs';
 import Leadership from '../sections/Leadership';
@@ -22,7 +21,6 @@ export default function Home() {
       <VisionMission />
       <CoreValues />
       <Services />
-      <FeaturedProject />
       <PreviousProjects />
       <WhyChooseUs />
       <Leadership />
