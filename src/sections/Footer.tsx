@@ -111,7 +111,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="block text-accent font-medium mb-1">Phone:</span>
-                +92 318 8609060
+                +92-91-5846395
               </li>
               <li>
                 <span className="block text-accent font-medium mb-1">Email:</span>

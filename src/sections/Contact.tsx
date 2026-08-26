@@ -149,7 +149,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h5 className="font-bold text-white mb-1">Phone</h5>
-                    <p className="text-white/70 text-sm">+92 318 8609060</p>
+                    <p className="text-white/70 text-sm">+92-91-5846395</p>
                   </div>
                 </div>
                 
