@@ -1,4 +1,5 @@
 import leaderAvatar from '@assets/generated_images/leader_avatar.jpg';
+import ceoDaud from '@assets/generated_images/ceo_daud.jpeg';
 
 export interface Leader {
   name: string;
@@ -14,7 +15,7 @@ export const leaders: Leader[] = [
   {
     name: 'Muhammad Daud',
     title: 'Chief Executive Officer',
-    image: null,
+    image: ceoDaud,
     initials: 'MD',
     avatarClass: 'bg-gradient-to-br from-primary to-secondary',
     bio: [
