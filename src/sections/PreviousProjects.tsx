@@ -2,16 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { CheckCircle, Home, Milestone, UtilityPole, ArrowRight } from 'lucide-react';
-import sheikhAbadPlaceholder from '@assets/placeholders/sheikh-abad-township.svg';
-import safiAbadPlaceholder from '@assets/placeholders/safi-abad-scheme.svg';
-import pakhtoonSocietyPlaceholder from '@assets/placeholders/pakhtoon-society.svg';
+import sheikhAbadImg from '@assets/placeholders/sheikh-abad-township.png';
+import safiAbadImg from '@assets/placeholders/safi-abad-scheme.png';
+import pakhtoonSocietyImg from '@assets/placeholders/pakhtoon-society.png';
 
 const projects = [
   {
     slug: 'sheikh-abad-township',
     name: "Sheikh Abad Township",
     stats: "30 Residential Plots",
-    image: sheikhAbadPlaceholder,
+    image: sheikhAbadImg,
+    isPlaceholderImage: false,
     features: [
       { icon: UtilityPole, text: "Complete Utilities" },
       { icon: Milestone, text: "Paved Roads" },
@@ -23,7 +24,8 @@ const projects = [
     slug: 'safi-abad-scheme',
     name: "Safi Abad Scheme",
     stats: "45+ Plots Delivered",
-    image: safiAbadPlaceholder,
+    image: safiAbadImg,
+    isPlaceholderImage: false,
     features: [
       { icon: UtilityPole, text: "Sewerage System" },
       { icon: Milestone, text: "Access Roads" },
@@ -35,7 +37,8 @@ const projects = [
     slug: 'pakhtoon-society',
     name: "Pakhtoon Society",
     stats: "70 Residential Plots",
-    image: pakhtoonSocietyPlaceholder,
+    image: pakhtoonSocietyImg,
+    isPlaceholderImage: false,
     features: [
       { icon: Home, text: "Mosque & School" },
       { icon: UtilityPole, text: "Central Water Tank" },
@@ -82,11 +85,19 @@ export default function PreviousProjects() {
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
+                    className={`absolute inset-0 w-full h-full object-cover ${
+                      project.isPlaceholderImage ? 'opacity-40 mix-blend-overlay' : ''
+                    }`}
                   />
                 )}
-                <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30"></div>
+                {project.isPlaceholderImage ? (
+                  <>
+                    <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30"></div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/25"></div>
+                )}
 
                 <div className="relative z-10 flex justify-between items-start">
                   <div className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold uppercase tracking-wider border border-white/30 flex items-center gap-1">

@@ -1,7 +1,7 @@
 import arbakanImg from '@assets/generated_images/featured_project.jpg';
-import sheikhAbadPlaceholder from '@assets/placeholders/sheikh-abad-township.svg';
-import safiAbadPlaceholder from '@assets/placeholders/safi-abad-scheme.svg';
-import pakhtoonSocietyPlaceholder from '@assets/placeholders/pakhtoon-society.svg';
+import sheikhAbadImg from '@assets/placeholders/sheikh-abad-township.png';
+import safiAbadImg from '@assets/placeholders/safi-abad-scheme.png';
+import pakhtoonSocietyImg from '@assets/placeholders/pakhtoon-society.png';
 
 export type ProjectStatus = 'ongoing' | 'completed';
 
@@ -53,8 +53,7 @@ export const projects: Project[] = [
     name: 'Sheikh Abad Township',
     status: 'completed',
     tagline: 'A fully occupied residential community with complete utilities and paved roads.',
-    image: sheikhAbadPlaceholder,
-    isPlaceholderImage: true,
+    image: sheikhAbadImg,
     gradient: 'from-emerald-500 to-emerald-700',
     location: 'Peshawar, Pakistan',
     stats: [
@@ -73,8 +72,7 @@ export const projects: Project[] = [
     name: 'Safi Abad Scheme',
     status: 'completed',
     tagline: 'Over 45 plots delivered with a complete sewerage system and title handover.',
-    image: safiAbadPlaceholder,
-    isPlaceholderImage: true,
+    image: safiAbadImg,
     gradient: 'from-blue-600 to-indigo-800',
     location: 'Peshawar, Pakistan',
     stats: [
@@ -91,8 +89,7 @@ export const projects: Project[] = [
     name: 'Pakhtoon Society',
     status: 'completed',
     tagline: 'A 70-plot residential scheme built around a mosque, school, and community spaces.',
-    image: pakhtoonSocietyPlaceholder,
-    isPlaceholderImage: true,
+    image: pakhtoonSocietyImg,
     gradient: 'from-slate-700 to-slate-900',
     location: 'Peshawar, Pakistan',
     stats: [{ label: 'Residential Plots', value: '70' }],

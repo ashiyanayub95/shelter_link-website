@@ -113,10 +113,18 @@ export default function Projects() {
                       <img
                         src={project.image}
                         alt={project.name}
-                        className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
+                        className={`absolute inset-0 w-full h-full object-cover ${
+                          project.isPlaceholderImage ? 'opacity-40 mix-blend-overlay' : ''
+                        }`}
                       />
                     )}
-                    <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+                    <div
+                      className={
+                        project.isPlaceholderImage
+                          ? 'absolute inset-0 bg-black/10 mix-blend-overlay'
+                          : 'absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/25'
+                      }
+                    ></div>
                     <div className="relative z-10 flex items-center justify-between gap-2">
                       <div className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold uppercase tracking-wider border border-white/30 flex items-center gap-1 w-max">
                         <CheckCircle className="w-3 h-3" />
