@@ -11,6 +11,7 @@ import {
   Mail,
 } from 'lucide-react';
 import ApplyDialog from '../components/ApplyDialog';
+import { APPLY_EMAIL } from '@/lib/apply';
 
 const openings = [
   {
@@ -46,7 +47,6 @@ const perks = [
   { icon: GraduationCap, title: 'Skill Development', desc: 'Training and mentorship in construction, planning, and management.' },
 ];
 
-const APPLY_EMAIL = 'Shelterlink.pk@gmail.com';
 
 export default function Career() {
   return (

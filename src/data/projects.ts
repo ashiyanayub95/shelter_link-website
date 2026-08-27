@@ -1,3 +1,4 @@
+import arbakanImg from '@assets/generated_images/featured_project.jpg';
 import sheikhAbadImg from '@assets/placeholders/sheikh-abad-township.png';
 import safiAbadImg from '@assets/placeholders/safi-abad-scheme.png';
 import pakhtoonSocietyImg from '@assets/placeholders/pakhtoon-society.png';
@@ -21,6 +22,32 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'arbakan-valley',
+    name: 'Arbakan Valley',
+    status: 'ongoing',
+    tagline:
+      'Our flagship development bringing premium town planning to affordable housing.',
+    image: arbakanImg,
+    location: 'Mardan, Pakistan',
+    stats: [
+      { label: 'Total Area', value: '15 Acres' },
+      { label: 'Residential', value: '50+ Plots' },
+      { label: 'Est. Completion', value: 'Q1 2027' },
+      { label: 'Location', value: 'Mardan, KP' },
+    ],
+    description: [
+      "Strategically located with direct access to major transit routes, Arbakan Valley offers a complete lifestyle with modern amenities for families seeking affordable, well-planned living.",
+      "The scheme is being developed with full utility infrastructure, community spaces, and long-term livability in mind — reflecting ShelterLink's community-first approach to town planning.",
+    ],
+    amenities: [
+      'Central Mosque & Primary School',
+      'Water Supply & Underground Drainage',
+      'Electrification & Community Park',
+    ],
+    value: 'PKR 60+ Million',
+    currentStatus: 'Land Leveling & Zoning in Progress',
+  },
   {
     slug: 'sheikh-abad-township',
     name: 'Sheikh Abad Township',

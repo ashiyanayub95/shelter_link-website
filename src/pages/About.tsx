@@ -74,8 +74,9 @@ export default function About() {
               </p>
               <p className="text-foreground/80 text-lg mb-8 leading-relaxed">
                 That approach has shaped a track record of fully-utilised,
-                fully-occupied housing societies across Peshawar — communities
-                built with complete infrastructure, not just plots on paper.
+                fully-occupied housing societies across Peshawar, and we're now
+                extending that same standard to Mardan — communities built with
+                complete infrastructure, not just plots on paper.
               </p>
 
               <div className="flex flex-wrap gap-3">

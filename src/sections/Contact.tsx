@@ -34,6 +34,7 @@ export default function Contact() {
         body: formData,
       });
       const data = await res.json();
+      console.info('[web3forms] response', res.status, data);
 
       if (data.success) {
         toast({
@@ -45,9 +46,13 @@ export default function Contact() {
         throw new Error(data.message || 'Submission failed');
       }
     } catch (err) {
+      console.error('[web3forms] submission failed', err);
       toast({
         title: 'Something went wrong',
-        description: 'Your message could not be sent. Please try again or email us directly.',
+        description:
+          err instanceof Error && err.message
+            ? err.message
+            : 'Your message could not be sent. Please try again or email us directly.',
         variant: 'destructive',
       });
     } finally {

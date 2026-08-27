@@ -45,7 +45,13 @@ export default function Footer() {
               Developing sustainable housing societies, infrastructure, and community-focused residential projects across Pakistan.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors text-white/80 hover:text-white">
+              <a
+                href="https://www.facebook.com/share/1DN5cDUL3c/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ShelterLink on Facebook"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors text-white/80 hover:text-white"
+              >
                 <FaFacebook size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors text-white/80 hover:text-white">

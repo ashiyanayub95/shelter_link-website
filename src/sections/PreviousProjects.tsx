@@ -50,7 +50,7 @@ const projects = [
 
 export default function PreviousProjects() {
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
